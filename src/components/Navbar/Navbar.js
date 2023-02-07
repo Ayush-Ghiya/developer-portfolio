@@ -11,8 +11,9 @@ import Drawer from '@material-ui/core/Drawer';
 import CloseIcon from '@material-ui/icons/Close';
 
 import './Navbar.css';
-import { headerData } from '../../data/headerData';
+
 import { ThemeContext } from '../../contexts/ThemeContext';
+import { AiOutlineFundProjectionScreen } from 'react-icons/ai';
 
 function Navbar() {
     const { theme, setHandleDrawer } = useContext(ThemeContext);
@@ -134,7 +135,7 @@ function Navbar() {
         <div className='navbar'>
             <div className='navbar--container'>
                 <h1 style={{ color: theme.secondary }}>
-                    {shortname(headerData.name)}
+                    AG.
                 </h1>
 
                 <IoMenuSharp
@@ -229,42 +230,23 @@ function Navbar() {
                             </NavLink>
                         </Fade>
 
+                        
+
                         <Fade left>
                             <NavLink
-                                to='/#services'
+                                to='/#projects'
                                 smooth={true}
                                 spy='true'
                                 duration={2000}
                             >
                                 <div className={classes.drawerItem}>
-                                    <BsFillGearFill
-                                        className={classes.drawerIcon}
-                                    />
+                                    <AiOutlineFundProjectionScreen className={classes.drawerIcon} />
                                     <span className={classes.drawerLinks}>
-                                        Services
+                                        Projects
                                     </span>
                                 </div>
                             </NavLink>
                         </Fade>
-
-                        <Fade left>
-                            <NavLink
-                                to='/#blog'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <div className={classes.drawerItem}>
-                                    <FaFolderOpen
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
-                                        Blog
-                                    </span>
-                                </div>
-                            </NavLink>
-                        </Fade>
-
                         <Fade left>
                             <NavLink
                                 to='/#contacts'

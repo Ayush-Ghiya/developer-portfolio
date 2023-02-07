@@ -13,9 +13,7 @@ function Experience() {
     return (
         <div className="experience" id="experience" style={{backgroundColor: theme.secondary}}> 
              <div className="experience-body">
-                 <div className="experience-image">
-                     <img src={theme.expimg} alt="" />
-                 </div>
+                
                  <div className="experience-description">
                     <h1 style={{color:theme.primary}}>Experience</h1>
                     {experienceData.map(exp =>(
@@ -27,6 +25,9 @@ function Experience() {
                             startYear={exp.startYear}
                             endYear={exp.endYear}/>
                     ))}
+                 </div>
+                 <div className="experience-image">
+                     <img src={theme.expimg} alt="" />
                  </div>
              </div>
         </div>

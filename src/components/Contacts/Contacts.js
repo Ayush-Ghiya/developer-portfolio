@@ -8,14 +8,9 @@ import {
     FaTwitter,
     FaLinkedinIn,
     FaGithub,
-    FaYoutube,
-    FaBloggerB,
-    FaRedditAlien,
-    FaStackOverflow,
-    FaCodepen,
+   
     FaInstagram,
-    FaGitlab,
-    FaMediumM,
+   
 } from 'react-icons/fa';
 import { AiOutlineSend, AiOutlineCheckCircle } from 'react-icons/ai';
 import { FiPhone, FiAtSign } from 'react-icons/fi';
@@ -23,8 +18,8 @@ import { HiOutlineLocationMarker } from 'react-icons/hi';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 
-import { socialsData } from '../../data/socialsData';
-import { contactsData } from '../../data/contactsData';
+
+
 import './Contacts.css';
 
 function Contacts() {
@@ -140,7 +135,7 @@ function Contacts() {
                     message: message,
                 };
 
-                axios.post(contactsData.sheetAPI, responseData).then((res) => {
+                axios.post("https://sheetdb.io/api/v1/qwep4ctcmvgj6", responseData).then((res) => {
                     console.log('success');
                     setSuccess(true);
                     setErrMsg('');
@@ -176,7 +171,7 @@ function Contacts() {
                                     Name
                                 </label>
                                 <input
-                                    placeholder='John Doe'
+                                    placeholder='Your Name'
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                     type='text'
@@ -192,7 +187,7 @@ function Contacts() {
                                     Email
                                 </label>
                                 <input
-                                    placeholder='John@doe.com'
+                                    placeholder='xyz@abc.com'
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     type='email'
@@ -282,25 +277,25 @@ function Contacts() {
 
                     <div className='contacts-details'>
                         <a
-                            href={`mailto:${contactsData.email}`}
+                            href={`mailto:ayushghiya2002@gmail.com`}
                             className='personal-details'
                         >
                             <div className={classes.detailsIcon}>
                                 <FiAtSign />
                             </div>
                             <p style={{ color: theme.tertiary }}>
-                                {contactsData.email}
+                            ayushghiya2002@gmail.com
                             </p>
                         </a>
                         <a
-                            href={`tel:${contactsData.phone}`}
+                            href={`tel:+917567579267`}
                             className='personal-details'
                         >
                             <div className={classes.detailsIcon}>
                                 <FiPhone />
                             </div>
                             <p style={{ color: theme.tertiary }}>
-                                {contactsData.phone}
+                            +917567579267
                             </p>
                         </a>
                         <div className='personal-details'>
@@ -308,121 +303,51 @@ function Contacts() {
                                 <HiOutlineLocationMarker />
                             </div>
                             <p style={{ color: theme.tertiary }}>
-                                {contactsData.address}
+                            Devgram Residency, Nana Chiloda, Ahmedabad, Gujarat - 382330
                             </p>
                         </div>
 
                         <div className='socialmedia-icons'>
-                            {socialsData.twitter && (
+                            
                                 <a
-                                    href={socialsData.twitter}
+                                    href='https://twitter.com/DuskyOp'
                                     target='_blank'
                                     rel='noreferrer'
                                     className={classes.socialIcon}
                                 >
                                     <FaTwitter aria-label='Twitter' />
                                 </a>
-                            )}
-                            {socialsData.github && (
+                            
+                        
                                 <a
-                                    href={socialsData.github}
+                                    href='https://github.com/Ayush-Ghiya'
                                     target='_blank'
                                     rel='noreferrer'
                                     className={classes.socialIcon}
                                 >
                                     <FaGithub aria-label='GitHub' />
                                 </a>
-                            )}
-                            {socialsData.linkedIn && (
+                           
                                 <a
-                                    href={socialsData.linkedIn}
+                                    href='https://in.linkedin.com/in/ayush-ghiya-9b2a12120'
                                     target='_blank'
                                     rel='noreferrer'
                                     className={classes.socialIcon}
                                 >
                                     <FaLinkedinIn aria-label='LinkedIn' />
                                 </a>
-                            )}
-                            {socialsData.instagram && (
+                           
                                 <a
-                                    href={socialsData.instagram}
+                                    href='https://www.instagram.com/ayush_ghiya_/'
                                     target='_blank'
                                     rel='noreferrer'
                                     className={classes.socialIcon}
                                 >
                                     <FaInstagram aria-label='Instagram' />
                                 </a>
-                            )}
-                            {socialsData.medium && (
-                                <a
-                                    href={socialsData.medium}
-                                    target='_blank'
-                                    rel='noreferrer'
-                                    className={classes.socialIcon}
-                                >
-                                    <FaMediumM aria-label='Medium' />
-                                </a>
-                            )}
-                            {socialsData.blogger && (
-                                <a
-                                    href={socialsData.blogger}
-                                    target='_blank'
-                                    rel='noreferrer'
-                                    className={classes.socialIcon}
-                                >
-                                    <FaBloggerB aria-label='Blogger' />
-                                </a>
-                            )}
-                            {socialsData.youtube && (
-                                <a
-                                    href={socialsData.youtube}
-                                    target='_blank'
-                                    rel='noreferrer'
-                                    className={classes.socialIcon}
-                                >
-                                    <FaYoutube aria-label='YouTube' />
-                                </a>
-                            )}
-                            {socialsData.reddit && (
-                                <a
-                                    href={socialsData.reddit}
-                                    target='_blank'
-                                    rel='noreferrer'
-                                    className={classes.socialIcon}
-                                >
-                                    <FaRedditAlien aria-label='Reddit' />
-                                </a>
-                            )}
-                            {socialsData.stackOverflow && (
-                                <a
-                                    href={socialsData.stackOverflow}
-                                    target='_blank'
-                                    rel='noreferrer'
-                                    className={classes.socialIcon}
-                                >
-                                    <FaStackOverflow aria-label='Stack Overflow' />
-                                </a>
-                            )}
-                            {socialsData.codepen && (
-                                <a
-                                    href={socialsData.codepen}
-                                    target='_blank'
-                                    rel='noreferrer'
-                                    className={classes.socialIcon}
-                                >
-                                    <FaCodepen aria-label='CodePen' />
-                                </a>
-                            )}
-                            {socialsData.gitlab && (
-                                <a
-                                    href={socialsData.gitlab}
-                                    target='_blank'
-                                    rel='noreferrer'
-                                    className={classes.socialIcon}
-                                >
-                                    <FaGitlab aria-label='GitLab' />
-                                </a>
-                            )}
+                            
+                            
+                        
                         </div>
                     </div>
                 </div>

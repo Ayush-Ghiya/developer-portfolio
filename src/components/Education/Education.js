@@ -14,6 +14,9 @@ function Education() {
         <div className="education" id="resume" style={{backgroundColor: theme.secondary}}>
            
             <div className="education-body">
+            <div className="education-image">
+                    <img src={theme.eduimg} alt=""/>
+                </div>
                 <div className="education-description">
                 <h1 style={{color:theme.primary}}>Education</h1>
                     {educationData.map(edu => (
@@ -27,9 +30,7 @@ function Education() {
                         />
                     ))}
                 </div>
-                <div className="education-image">
-                    <img src={theme.eduimg} alt=""/>
-                </div>
+                
             </div>
         </div>
     )

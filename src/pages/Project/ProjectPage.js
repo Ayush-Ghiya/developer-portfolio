@@ -9,7 +9,7 @@ import './ProjectPage.css'
 import { SingleProject } from '../../components';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { projectsData } from '../../data/projectsData'
-import { headerData } from '../../data/headerData'
+
 
 function ProjectPage() {
 
@@ -70,7 +70,7 @@ function ProjectPage() {
     return (
         <div className="projectPage" style={{backgroundColor: theme.secondary}}>
             <Helmet>
-                <title>{headerData.name} | Projects</title>
+                <title>Ayush Ghiya | Projects</title>
             </Helmet>
             <div className="projectPage-header" style={{backgroundColor:theme.primary}}>
                 <Link to="/">

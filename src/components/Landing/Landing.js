@@ -2,19 +2,19 @@ import React, { useContext } from 'react';
 import { Button } from '@material-ui/core';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import { makeStyles } from '@material-ui/core/styles';
-
+import Typed from 'react-typed';
 import './Landing.css';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import { headerData } from '../../data/headerData';
-import { socialsData } from '../../data/socialsData';
 
+import myimg from '../../assets/svg/avatar.svg'
+import resume from '../../assets/pdf/resume.pdf'
 import {
     FaTwitter,
     FaLinkedin,
     FaGithub,
-    FaYoutube,
-    FaBlogger,
+    FaInstagram,
 } from 'react-icons/fa';
+
 
 function Landing() {
     const { theme, drawerOpen } = useContext(ThemeContext);
@@ -75,9 +75,9 @@ function Landing() {
                     style={{ backgroundColor: theme.primary }}
                 >
                     <div className='lcl--content'>
-                        {socialsData.linkedIn && (
+                        
                             <a
-                                href={socialsData.linkedIn}
+                                href='https://in.linkedin.com/in/ayush-ghiya-9b2a12120'
                                 target='_blank'
                                 rel='noreferrer'
                             >
@@ -87,10 +87,9 @@ function Landing() {
                                     aria-label='LinkedIn'
                                 />
                             </a>
-                        )}
-                        {socialsData.github && (
+                        
                             <a
-                                href={socialsData.github}
+                                href='https://github.com/Ayush-Ghiya'
                                 target='_blank'
                                 rel='noreferrer'
                             >
@@ -100,10 +99,10 @@ function Landing() {
                                     aria-label='GitHub'
                                 />
                             </a>
-                        )}
-                        {socialsData.twitter && (
+                        
+                        
                             <a
-                                href={socialsData.twitter}
+                                href='https://twitter.com/DuskyOp'
                                 target='_blank'
                                 rel='noreferrer'
                             >
@@ -113,60 +112,62 @@ function Landing() {
                                     aria-label='Twitter'
                                 />
                             </a>
-                        )}
-                        {socialsData.youtube && (
+                       
                             <a
-                                href={socialsData.youtube}
+                                href='https://www.instagram.com/ayush_ghiya_/'
                                 target='_blank'
                                 rel='noreferrer'
                             >
-                                <FaYoutube
+                                <FaInstagram
                                     className='landing--social'
                                     style={{ color: theme.secondary }}
-                                    aria-label='YouTube'
+                                    aria-label='Instagram'
                                 />
                             </a>
-                        )}
-                        {socialsData.blogger && (
-                            <a
-                                href={socialsData.blogger}
-                                target='_blank'
-                                rel='noreferrer'
-                            >
-                                <FaBlogger
-                                    className='landing--social'
-                                    style={{ color: theme.secondary }}
-                                    aria-label='Blogger'
-                                />
-                            </a>
-                        )}
+                      
+                        
+                        
                     </div>
                 </div>
                 <img
-                    src={headerData.image}
+                    src={myimg}
                     alt=''
                     className='landing--img'
                     style={{
-                        opacity: `${drawerOpen ? '0' : '1'}`,
                         borderColor: theme.secondary,
                     }}
                 />
+                
                 <div
                     className='landing--container-right'
-                    style={{ backgroundColor: theme.secondary }}
+                    style={{ backgroundColor: theme.secondary}}
                 >
                     <div
                         className='lcr--content'
                         style={{ color: theme.tertiary }}
                     >
-                        <h6>{headerData.title}</h6>
-                        <h1>{headerData.name}</h1>
-                        <p>{headerData.desciption}</p>
+                        
+                       
+                        <h1>Ayush Ghiya</h1>
+                        <Typed
+                            strings={[
+                                'Backend Developer',
+                                'Frontend Developer',
+                                'Fullstack Developer',
+                                'Web Designer',        
+                            ]}
+                            typeSpeed={60}
+                            backSpeed={80}
+                            className="typed-header"
+                            style={{ color: theme.primary, fontSize: '20px' }}
+                            loop
+                        />
+                        <p>Hello! I am Ayush, a professional and passionate programmer in my daily life. A quick learner with a self-learning attitude. I love to learn and explore new technologies and I am Passionate about Problem Solving.</p>
 
                         <div className='lcr-buttonContainer'>
-                            {headerData.resumePdf && (
+                            {resume && (
                                 <a
-                                    href={headerData.resumePdf}
+                                    href={resume}
                                     download='resume'
                                     target='_blank'
                                     rel='noreferrer'
@@ -189,6 +190,7 @@ function Landing() {
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     );

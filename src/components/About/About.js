@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import './About.css';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import { aboutData } from '../../data/aboutData'
+
 
 
 
@@ -18,12 +18,12 @@ function About() {
             </div>
             <div className="about-body">
                 <div className="about-description">
-                    <h2 style={{color: theme.primary}}>{aboutData.title}</h2>
-                    <p style={{color:theme.tertiary80}}>{aboutData.description1}<br/><br/>{aboutData.description2}</p>
+                    <h2 style={{color: theme.primary}}>Who I am.</h2>
+                    <p style={{color:theme.tertiary80}}>My name is Ayush. I'm a web designer and developer based in Ahmedabad, India.<br/><br/>I love to learn and explore new arenas. I am a professional and passionate programmer in my daily life. A quick learner with a self-learning attitude.  Love almost all the stacks of Software Engineering. My current stack includes Nodejs, React, NextJs, Bootstrap, Tailwind, Material UI, MongoDB, Mysql, Firebase, Cloudinary, etc.</p>
                 </div>
                 <div className="about-img">
                     <img 
-                        src={aboutData.image === 1 ? theme.aboutimg1 : theme.aboutimg2}  
+                        src={theme.aboutimg1}  
                         alt="" 
                     />
                 </div>
